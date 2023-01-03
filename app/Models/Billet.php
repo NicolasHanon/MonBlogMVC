@@ -20,4 +20,9 @@ class Billet extends Model
     {
         return $this->hasMany(Commentaire::class);
     }
+
+    public function categories()
+    {
+        return $this->belongsToMany(Categorie::class);
+    }
 }

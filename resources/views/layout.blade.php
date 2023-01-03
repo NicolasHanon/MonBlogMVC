@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <!--<link rel="stylesheet" href="..\resources\css\style.css"/>-->
-        <link rel="stylesheet" href="{{ URL::asset('style.css') }}" />
+        <link rel="stylesheet" href="{{ URL::asset('..\resources\css\style.css') }}" />
         <title>Mon Blog</title>
     </head>
     <body>

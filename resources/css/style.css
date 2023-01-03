@@ -35,3 +35,11 @@ h1 {
 #titreBlog, #piedBlog {
     text-align: center;
 }
+
+#titreReponses {
+    font-size: 100%;
+}
+
+#txtCommentaire {
+    width : 50%
+}

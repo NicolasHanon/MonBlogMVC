@@ -18,6 +18,7 @@ class CategorieFactory extends Factory
     {
         return [
             //
+            'CAT_NOM' => fake()->text(10),
         ];
     }
 }

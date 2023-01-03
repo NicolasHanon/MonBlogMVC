@@ -14,6 +14,7 @@ class CommentaireSeeder extends Seeder
      */
     public function run()
     {
-        //
+        //Création de 10 faux commenataires
+        \App\Models\Commentaire::factory(10)->create();
     }
 }

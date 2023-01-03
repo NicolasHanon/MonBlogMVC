@@ -13,4 +13,11 @@ class Billet extends Model
         'BIL_TITRE',
         'BIL_CONTENU',
     ];
+    //On ne prendra pas le champ timestamp associé à la table.
+    public $timestumps = false;
+
+    public function commentaires()
+    {
+        return $this->hasMany(Commentaire::class);
+    }
 }

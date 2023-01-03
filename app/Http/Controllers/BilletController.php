@@ -17,7 +17,12 @@ class BilletController extends Controller
     public function index()
     {
         //
-        $billets = Billet::all();
+        try {
+            $billets = Billet::all();
+        }
+        catch(\Illuminate\Database\QueryException $e) {
+            return view('errors.unavaible');
+        }
         return view('index',compact('billets'));
     }
 

@@ -20,4 +20,11 @@ class BilletController extends Controller
         $billets = Billet::all();
         return view('index',compact('billets'));
     }
+
+    public function show(Billet $billet)
+    {
+        //
+        $commentaires = $billet->commentaires;
+        return view('vBillet', compact('billet','commentaires'));
+    }
 }

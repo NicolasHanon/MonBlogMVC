@@ -13,4 +13,9 @@ class Commentaire extends Model
         'COM_AUTEUR',
         'COM_CONTENU',
     ];
+
+    public function billet()
+    {
+        return $this->belongsTo(Billet::class);
+    }
 }

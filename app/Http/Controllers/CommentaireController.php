@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreCommentaireRequest;
 use App\Models\Commentaire;
 use App\Models\Billet;
 use Illuminate\Http\Request;
@@ -35,6 +36,10 @@ class CommentaireController extends Controller
             Log::error('Commentaire : Billet non trouvé');
             return view('errors.unavaible');
         }
+        catch (\Illuminate\Database\QueryException $e) {
+            Log::error('Commentaire : base de données indisponible');
+            return view ('errors.dberror');
+        }
         return view ('vCommenter',compact('idBillet','billet'));
     }
 
@@ -44,9 +49,18 @@ class CommentaireController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreCommentaireRequest $request)
     {
         //
+        try {
+            Commentaire::create($request->all());
+        }
+        catch (\Illuminate\Database\QueryException $e) {
+            Log::error('Commentaire : insertion en base de données impossible');
+            return view ('errors.dberror');
+        }
+        Log::info('Commentaire ajouté par : '.$request->ip());
+        return view('vConfirmStore');
     }
 
     /**

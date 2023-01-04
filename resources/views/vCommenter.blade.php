@@ -25,13 +25,13 @@
                 @enderror
             </div>
             <div>
-                <input type="text" name="COM_DATE" value="{{ $today }}">
+                <input type="hidden" name="COM_DATE" value="{{ $today }}">
             </div>
             <div>
-                <input type="text" name="created_at" value="{{ $today }}">
+                <input type="hidden" name="created_at" value="{{ $today }}">
             </div>
             <div>
-                <input type="text" name="billet_id" value="{{ $idBillet}}">
+                <input type="hidden" name="billet_id" value="{{ $idBillet}}">
             </div>
             <br>
             <button type="submit">Envoyer !</button>

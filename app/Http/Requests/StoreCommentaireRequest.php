@@ -27,7 +27,7 @@ class StoreCommentaireRequest extends FormRequest
             //
 
             'COM_AUTEUR' => ['required','alpha','max:100'],
-            'COM_CONTENU' => ['required','alpha','max:200']
+            'COM_CONTENU' => ['required','max:200']
         ];
     }
 
@@ -36,7 +36,7 @@ class StoreCommentaireRequest extends FormRequest
         return [
             'COM_AUTEUR.required' => 'Le nom de l\'auteur est obligatoire',
             'COM_AUTEUR.max' => 'Le nom de l\'auteur ne doit pas dépasser 100 caractères',
-            'COM_AUTEUR.alpha' => 'Le nom doit contenir uniquement dse lettres',
+            'COM_AUTEUR.alpha' => 'Le nom doit contenir uniquement des lettres',
             'COM_CONTENU.required' => 'Le commentaire du billet est obligatoire',
             'COM_CONTENU.max' => 'Le commentaire ne doir pas dépasser 200 caractères',
             'COM_CONTENU.alpha' => 'Le commentaire doit contenir uniquement des lettres',

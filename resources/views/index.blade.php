@@ -21,6 +21,8 @@
                 </p>
             </header>
             <p> {{ $billet->BIL_CONTENU }}</p>
+
+            <a href="{{ route('commenter',['id'=>$billet->id]) }}"><h3 class="TitreBillet">Ecrire un commentaire</h3>
         </article>
         <hr />
     @endforeach
